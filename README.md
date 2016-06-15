@@ -26,11 +26,11 @@ simple OSC sending library written in pure Swift
      super.viewDidLoad()
 
      let osc:Osc = Osc()
-     osc.SetHost(host.text!, callback: { self.SendMessage() })
+     osc.SetHost("192.168.0.1", callback: { self.SendMessage() })
  }
 
  func SendMessage() {
-     osc.SetPort(Int(port.text!)!)
+     osc.SetPort(10000)
      osc.PushAddress("/hello")
      osc.PushArg("world")
      osc.PushArg(100)
